@@ -4,18 +4,52 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:view="clr-namespace:MovieFinder.View"
-    Shell.FlyoutBehavior="Disabled">
-    <TabBar>
-        <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate view:SearchPage}"
-         />
+    xmlns:viewmodel="clr-namespace:MovieFinder.ViewModel"
+    x:DataType="viewmodel:BaseViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    >
+    <Shell.TitleView>
+        <FlexLayout HeightRequest="100" Direction="Row" JustifyContent="SpaceBetween">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="movie_logo.png" HeightRequest="30" Aspect="AspectFit" />
+                <Label Text="CS" Style="{StaticResource AppIconLabel}" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>         
+            
+        </FlexLayout>
+    </Shell.TitleView>
 
-        <ShellContent Title="Movie Details" 
-                      ContentTemplate="{DataTemplate view:MovieDetails}"
-                      
-                      />
+    <TabBar>
+        <Tab Title="Home"
+             Icon="home_white_24dp.svg"
+             
+             >
+            <ShellContent
+            
+            ContentTemplate="{DataTemplate view:SearchPage}"
+         />
+        </Tab>
+
+        <Tab  Title="Shopping"
+              Icon="shopping_cart_white_24dp.svg">
+            <ShellContent
+           
+            ContentTemplate="{DataTemplate view:Shopping}"
+            Route="//shopping"
+
+         />
+        </Tab>
+
+        <Tab Title="Share"
+             Icon="share_white_24dp.svg"
+             >
+            <ShellContent
+            
+            ContentTemplate="{DataTemplate view:SharePage}"
+            Route="//sharepage"
+
+                
+         />
+        </Tab>
     </TabBar>
-    
 
 </Shell>

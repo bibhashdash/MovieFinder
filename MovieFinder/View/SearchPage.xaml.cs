@@ -1,12 +1,14 @@
-﻿namespace MovieFinder.View;
+﻿using MovieFinder.ViewModel;
+
+namespace MovieFinder.View;
 
 public partial class SearchPage: ContentPage
 {
-	int count = 0;
 
-	public SearchPage()
+	public SearchPage(BaseViewModel baseViewModel)
 	{
 		InitializeComponent();
+		BindingContext = baseViewModel;
 	}
 
 	

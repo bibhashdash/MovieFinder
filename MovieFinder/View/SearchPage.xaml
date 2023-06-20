@@ -2,12 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieFinder.View.SearchPage"
+             xmlns:viewmodel="clr-namespace:MovieFinder.ViewModel"
+             x:DataType="viewmodel:BaseViewModel"
              Title="Welcome to Movie Finder"
              >
 
-    <ScrollView>
-        <Grid RowDefinitions="125, *">
-            
+    <ScrollView
+        >        
+        <Grid RowDefinitions="50, 50, 50, *"
+              Padding="10"
+              RowSpacing="10"
+              >
+            <Label Style="{StaticResource TitleLabel}" Text="Cine-Seek" />
+            <Grid ColumnDefinitions="*, 100"
+                  ColumnSpacing="20"
+                  Grid.Row="1"
+                  >
+                <Entry x:Name="search"
+                   Placeholder="Enter a search item"
+                       
+                   />
+                <Button Grid.Column="1" Text="Search" />
+            </Grid>
+            <Button Text="Go to Shop" Grid.Row="2" Command="{Binding GoToShopCommand}" />
+
         </Grid> 
     </ScrollView>
 

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using MovieFinder.View;
+using MovieFinder.ViewModel;
 
 namespace MovieFinder;
 
@@ -18,7 +20,8 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
+		builder.Services.AddSingleton<SearchPage>();
+		builder.Services.AddSingleton<BaseViewModel>();
 		return builder.Build();
 	}
 }

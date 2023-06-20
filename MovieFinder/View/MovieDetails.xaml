@@ -3,5 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieFinder.View.MovieDetails"
              Title="Movie Details">
-    
+    <ScrollView>
+        <Grid RowDefinitions="125, *">
+            <Label>View 1 movie details here</Label>
+        </Grid>
+    </ScrollView>
+
 </ContentPage>
