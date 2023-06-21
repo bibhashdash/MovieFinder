@@ -13,15 +13,14 @@
             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                 <Image Source="movie_logo.png" HeightRequest="30" Aspect="AspectFit" />
                 <Label Text="CS" Style="{StaticResource AppIconLabel}" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>         
-            
+            </VerticalStackLayout>            
         </FlexLayout>
     </Shell.TitleView>
 
     <TabBar>
         <Tab Title="Home"
              Icon="home_white_24dp.svg"
-             
+             Route="//searchpage"
              >
             <ShellContent
             

@@ -4,6 +4,7 @@
              x:Class="MovieFinder.View.SearchPage"
              xmlns:viewmodel="clr-namespace:MovieFinder.ViewModel"
              x:DataType="viewmodel:BaseViewModel"
+             xmlns:model="clr-namespace:MovieFinder.Model"
              Title="Welcome to Movie Finder"
              >
 
@@ -14,18 +15,31 @@
               RowSpacing="10"
               >
             <Label Style="{StaticResource TitleLabel}" Text="Cine-Seek" />
-            <Grid ColumnDefinitions="*, 100"
-                  ColumnSpacing="20"
-                  Grid.Row="1"
-                  >
-                <Entry x:Name="search"
-                   Placeholder="Enter a search item"
-                       
-                   />
-                <Button Grid.Column="1" Text="Search" />
-            </Grid>
-            <Button Text="Go to Shop" Grid.Row="2" Command="{Binding GoToShopCommand}" />
-
+            <Label Style="{StaticResource BaseLabel}" Text="Hello" Grid.Row="1" />
+            <SearchBar 
+                x:Name="searchBar" 
+                Grid.Row="2" 
+                Placeholder="Enter a search query" 
+                SearchCommand="{Binding GetMoviesCommand}" 
+                SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"
+                />
+            <CollectionView Grid.Row="3"
+                            ItemsSource="{Binding AllMovies}"
+                            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Movie">
+                        <Frame>
+                            <Grid ColumnDefinitions="Auto, 100">
+                                <Grid ColumnDefinitions="Auto, Auto">
+                                    <Label Text="{Binding Title}"/>
+                                    <Label Text="{Binding Year}"/>                                   
+                                </Grid>
+                                <Image Source="https://picsum.photos/100" Aspect="AspectFill" WidthRequest="100" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Grid> 
     </ScrollView>
 
