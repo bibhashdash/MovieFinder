@@ -12,10 +12,5 @@ public partial class SearchPage: ContentPage
 		InitializeComponent();
 		BindingContext = baseViewModel;
 	}
-
-    private void searchBar_SearchButtonPressed(object sender, EventArgs e)
-    {
-		Console.WriteLine(e);
-    }
 }
 

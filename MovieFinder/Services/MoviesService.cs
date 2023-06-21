@@ -7,7 +7,6 @@ using System.Net.Http.Json;
 using MovieFinder.Model;
 using static System.Net.WebRequestMethods;
 using System.Text.Json;
-using GoogleGson;
 using System.Net.WebSockets;
 
 namespace MovieFinder.Services
@@ -36,6 +35,20 @@ namespace MovieFinder.Services
                 movieList = result2.Search;                
             }
             return movieList;
+        }
+
+        MovieDetails movieDetails = new ();
+
+        public async Task<MovieDetails> GetMovieDetails(string movieTitle)
+        {
+            var url = $"https://www.omdbapi.com/?i=tt3896198&apikey=55dce2d4&t={movieTitle}&plot=full";
+            var response = await httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                var movieDetails = await response.Content.ReadFromJsonAsync<MovieDetails>();
+
+            }
+            return movieDetails;
         }
     }
 }
