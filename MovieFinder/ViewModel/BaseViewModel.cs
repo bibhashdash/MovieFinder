@@ -19,12 +19,12 @@ namespace MovieFinder.ViewModel
 
         [RelayCommand]
        async Task GetMoviesAsync(string searchQuery)
-        {
-            Console.WriteLine(searchQuery);
+        {          
             AllMovies.Clear();
-            Console.WriteLine(AllMovies.Count);   
+              
             try
             {
+                
                 var movies = await moviesService.GetMovies(searchQuery);
                 
                 foreach (var movie in movies)
@@ -37,10 +37,7 @@ namespace MovieFinder.ViewModel
             catch (Exception ex) { 
                 Debug.WriteLine(ex);
             }
-            finally
-            {
-                //Console.WriteLine(AllMovies.Count);
-            }
+          
          
     }
         

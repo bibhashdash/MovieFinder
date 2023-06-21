@@ -25,11 +25,13 @@ namespace MovieFinder.Services
 
         public async Task<List<Movie>> GetMovies(string searchQuery)
         {
-            if (movieList.Count > 0) return movieList;
+            
             var url = $"https://www.omdbapi.com/?i=tt3896198&apikey=55dce2d4&s={searchQuery}";
              var response = await httpClient.GetAsync(url);
-            if(response.IsSuccessStatusCode)
+            movieList.Clear();
+            if (response.IsSuccessStatusCode)
             {
+                
                 var result2 = await response.Content.ReadFromJsonAsync<Root>();
                 movieList = result2.Search;                
             }
