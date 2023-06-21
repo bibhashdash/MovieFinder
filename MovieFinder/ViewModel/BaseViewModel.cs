@@ -12,30 +12,34 @@ namespace MovieFinder.ViewModel
     {
         MoviesService moviesService;
         public ObservableCollection<Movie> AllMovies { get; } = new ();
-
-        [ObservableProperty]
-        private string stupidTitle;
         public BaseViewModel()
         {
-            moviesService = new MoviesService();
+            this.moviesService = new MoviesService();
         }
 
         [RelayCommand]
        async Task GetMoviesAsync(string searchQuery)
         {
+            Console.WriteLine(searchQuery);
+            AllMovies.Clear();
+            Console.WriteLine(AllMovies.Count);   
             try
             {
                 var movies = await moviesService.GetMovies(searchQuery);
-                if (movies.Count != 0) movies.Clear();
+                
                 foreach (var movie in movies)
                 {
                     AllMovies.Add(movie);
                 }
-                //Console.WriteLine(AllMovies.Count);
+                
 
             }
             catch (Exception ex) { 
                 Debug.WriteLine(ex);
+            }
+            finally
+            {
+                //Console.WriteLine(AllMovies.Count);
             }
          
     }

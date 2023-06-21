@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MovieFinder.Services;
 using MovieFinder.View;
 using MovieFinder.ViewModel;
 
@@ -22,6 +23,7 @@ public static class MauiProgram
 #endif
 		builder.Services.AddSingleton<SearchPage>();
 		builder.Services.AddSingleton<BaseViewModel>();
+		builder.Services.AddSingleton<MoviesService>();
 		return builder.Build();
 	}
 }

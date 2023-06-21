@@ -23,10 +23,6 @@ namespace MovieFinder.Services
 
         List<Movie> movieList = new ();
 
-        //Movie movie = new Movie ();
-
-        //Root result = new Root ();
-
         public async Task<List<Movie>> GetMovies(string searchQuery)
         {
             if (movieList.Count > 0) return movieList;
@@ -35,7 +31,7 @@ namespace MovieFinder.Services
             if(response.IsSuccessStatusCode)
             {
                 var result2 = await response.Content.ReadFromJsonAsync<Root>();
-                movieList = result2.Search;
+                movieList = result2.Search;                
             }
             return movieList;
         }
