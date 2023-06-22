@@ -73,8 +73,11 @@ namespace MovieFinder.ViewModel
             var result = await GetMovieDetailsAsync(movie.Title);
            
     
-            
-                Console.WriteLine(result.Title);
+            if(result is not null)
+            {
+                Console.WriteLine(result.Plot);
+            }
+                
                 await Shell.Current.GoToAsync($"{nameof(MovieDetailsPage)}", true, new Dictionary<string, object>
             {
                 {"MovieDetails", result}

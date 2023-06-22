@@ -45,7 +45,7 @@ namespace MovieFinder.Services
             var response = await httpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
-                var movieDetails = await response.Content.ReadFromJsonAsync<MovieDetails>();
+                movieDetails = await response.Content.ReadFromJsonAsync<MovieDetails>();
 
             }
             return movieDetails;
