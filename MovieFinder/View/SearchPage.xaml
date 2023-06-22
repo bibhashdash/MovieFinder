@@ -45,13 +45,16 @@
                     </BindableLayout.EmptyView>
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Movie">
-                        <Frame Margin="10">
-                            <Frame.GestureRecognizers>
+                        <Border Style="{StaticResource BaseBorder}"
+                                    >
+                        <StackLayout Margin="10" Style="{StaticResource Card}">
+                            
+                            <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer CommandParameter="{Binding .}"
                                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:BaseViewModel}}, Path=GoToDetailsCommand}" 
                                                      
                                                       />
-                            </Frame.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>
                             <Grid ColumnDefinitions="*, 100">
                                 <Grid RowDefinitions="Auto, Auto" Grid.Column="0">
                                     <Label Text="{Binding Title}"/>
@@ -59,7 +62,9 @@
                                 </Grid>
                                 <Image Source="{Binding Poster}" Aspect="AspectFill" WidthRequest="100" Grid.Column="1" />
                             </Grid>
-                        </Frame>
+                            
+                        </StackLayout>
+                        </Border>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>            
