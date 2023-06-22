@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MovieFinder.Model;
 
 namespace MovieFinder.ViewModel
@@ -17,6 +18,9 @@ namespace MovieFinder.ViewModel
         }
 
         [ObservableProperty]
-        MovieDetails movieDetails;        
+        MovieDetails movieDetails;
+
+        [RelayCommand]
+        Task Back() => Shell.Current.GoToAsync("..", true);
     }
 }

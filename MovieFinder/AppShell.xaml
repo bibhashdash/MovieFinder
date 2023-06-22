@@ -20,11 +20,12 @@
     <TabBar>
         <Tab Title="Home"
              Icon="home_white_24dp.svg"
-             Route="//searchpage"
+             
              >
             <ShellContent
             
             ContentTemplate="{DataTemplate view:SearchPage}"
+                Route="SearchPage"
          />
         </Tab>
 
@@ -33,7 +34,7 @@
             <ShellContent
            
             ContentTemplate="{DataTemplate view:Shopping}"
-            Route="//shopping"
+            Route="Shopping"
 
          />
         </Tab>
@@ -44,7 +45,7 @@
             <ShellContent
             
             ContentTemplate="{DataTemplate view:SharePage}"
-            Route="//sharepage"
+            Route="SharePage"
 
                 
          />
