@@ -20,9 +20,10 @@
                 x:Name="searchBar" 
                 Grid.Row="1" 
                 Placeholder="Enter a search query" 
-                SearchCommand="{Binding GetMoviesCommand}" 
+                SearchCommand="{Binding GetMoviesCommand}"
                 SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"
                 />
+
             <Button 
                 Text="Clear Results" 
                 Grid.Row="2" 
@@ -55,12 +56,12 @@
                                                      
                                                       />
                             </StackLayout.GestureRecognizers>
-                            <Grid ColumnDefinitions="*, 100">
+                            <Grid ColumnDefinitions="*, 150">
                                 <Grid RowDefinitions="Auto, Auto" Grid.Column="0">
                                     <Label Text="{Binding Title}"/>
-                                    <Label Text="{Binding Year}" Grid.Row="1"/>                                   
+                                    <Label Text="{Binding Year}" Grid.Row="1" />                                   
                                 </Grid>
-                                <Image Source="{Binding Poster}" Aspect="AspectFill" WidthRequest="100" Grid.Column="1" />
+                                <Image Source="{Binding Poster}" Aspect="AspectFill" WidthRequest="150" HeightRequest="100" Grid.Column="1" />
                             </Grid>
                             
                         </StackLayout>

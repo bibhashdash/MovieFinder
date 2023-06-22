@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using MovieFinder.Model;
-using static System.Net.WebRequestMethods;
-using System.Text.Json;
-using System.Net.WebSockets;
 
 namespace MovieFinder.Services
 {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="MovieFinder.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -19,7 +19,7 @@
 
     <TabBar>
         <Tab Title="Home"
-             Icon="home_white_24dp.svg"
+             Icon="home_white_24dp"
              
              >
             <ShellContent
@@ -30,7 +30,7 @@
         </Tab>
 
         <Tab  Title="Shopping"
-              Icon="shopping_cart_white_24dp.svg">
+              Icon="shopping_cart_white_24dp">
             <ShellContent
            
             ContentTemplate="{DataTemplate view:Shopping}"
@@ -40,7 +40,7 @@
         </Tab>
 
         <Tab Title="Share"
-             Icon="share_white_24dp.svg"
+             Icon="share_white_24dp"
              >
             <ShellContent
             
